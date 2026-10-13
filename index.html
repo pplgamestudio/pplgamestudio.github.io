@@ -3,737 +3,422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPL GAME STUDIO — Професійний ремонт консолей та джойстиків</title>
+    <title>PPL GAME STUDIO | Ремонт консолей та джойстиків</title>
     
-    <!-- Поисковые мета-теги (SEO Keywords & Description) -->
-    <meta name="description" content="PPL GAME STUDIO (PPL Computer Entertainment Systems) — Професійний ремонт та обслуговування ігрових приставок PlayStation, Xbox, джойстиків DualSense, DualShock, Xbox Controller та комп'ютерної техніки. Від гравця до гравців.">
-    <meta name="keywords" content="ремонт playstation, ремонт xbox, ремонт джойстиків, ремонт геймпадів, заміна стіків, усунення дрифту, чистка консолей, заміна термопасти, обслуговування консолей, ремонт ps5, ремонт ps4, ремонт ps3, ремонт ps2, ремонт xbox series x s, ремонт xbox one, ремонт xbox 360, покупка продаж обмін приставок, ремонт пк та ноутбуків, ppl game studio, pplgamestudio">
-    <meta name="author" content="PPL GAME STUDIO">
+    <!-- SEO Ключевые слова и описание -->
+    <meta name="description" content="Професійний ремонт та обслуговування ігрових приставок і комп’ютерної техніки. PPL Computer Entertainment Systems.">
+    <meta name="keywords" content="ремонт playstation, ремонт xbox, ремонт джойстиків, заміна стіків, усунення дрифту, чистка консолей, обслуговування консолей, запчастини для playstation, запчастини для xbox, ігрові приставки, геймпади, ремонт ps5, ремонт ps4, ремонт ps3, ремонт ps2, ремонт xbox series s, ремонт xbox series x, xbox one, xbox 360, ремонт пк, ремонт ноутбуків, ppl game studio, pplgamestudio, чистка від пилу, заміна термопасти">
 
-    <!-- Шрифт Montserrat для современного строгого стиля -->
+    <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        /* Базовые переменные и сброс */
         :root {
-            --bg-main: #060b16;        /* Глубокий темно-синий фон */
-            --bg-sec: #0b1325;         /* Вторичный темно-синий для карточек и секций */
-            --bg-card: #101b33;        /* Подсветка блоков */
-            --gold: #d4af37;           /* Благородное золото */
-            --gold-light: #f3cf65;     /* Светлое золото для градиентов и наведения */
-            --gold-border: rgba(212, 175, 55, 0.28);
-            --text-white: #ffffff;
-            --text-muted: #94a3b8;
+            --bg-dark: #050A15; /* Глубокий темно-синий */
+            --bg-card: #0A1124; /* Цвет блоков */
+            --gold: #D4AF37; /* Золотой акцент */
+            --gold-hover: #F3CF65;
+            --text-main: #FFFFFF;
+            --text-muted: #94A3B8;
+            --border: rgba(212, 175, 55, 0.2);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            background-color: var(--bg-main);
-            color: var(--text-white);
             font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
         }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .gold-text { color: var(--gold); }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
-
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .gold-text {
-            color: var(--gold);
-        }
-
-        /* --- ШАПКА САЙТА (HEADER) --- */
+        /* Шапка (Header) */
         header {
-            background: rgba(6, 11, 22, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--gold-border);
+            background-color: rgba(5, 10, 21, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
+            padding: 15px 0;
         }
-
-        .header-inner {
+        .header-content {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            height: 84px;
+            align-items: center;
         }
-
-        .logo-group {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 15px;
         }
-
-        .logo-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            width: 44px;
-            height: 44px;
+        .logo svg {
+            width: 40px;
+            height: 40px;
             stroke: var(--gold);
         }
-
-        .logo-title {
-            font-size: 26px;
+        .logo-text h1 {
+            font-size: 24px;
             font-weight: 800;
-            letter-spacing: 1.5px;
             color: var(--gold);
             line-height: 1;
         }
-
-        .logo-sub {
+        .logo-text span {
             font-size: 10px;
-            letter-spacing: 2.5px;
-            color: var(--text-white);
-            display: block;
-            margin-top: 3px;
-        }
-
-        .logo-divider {
-            height: 32px;
-            width: 1px;
-            background: var(--gold-border);
-        }
-
-        .logo-tagline {
-            font-size: 11px;
+            letter-spacing: 2px;
             color: var(--text-muted);
-            letter-spacing: 0.8px;
-            line-height: 1.35;
             text-transform: uppercase;
         }
-
         .nav-links {
             display: flex;
-            gap: 32px;
-            font-size: 14px;
-            font-weight: 500;
+            gap: 30px;
         }
-
         .nav-links a {
-            position: relative;
-            padding: 6px 0;
-            color: var(--text-white);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
         }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--gold);
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gold);
-        }
-
-        /* Переключатель языков */
+        .nav-links a:hover { color: var(--gold); }
         .lang-switch {
             display: flex;
-            border: 1px solid var(--gold);
+            gap: 5px;
+            background: var(--bg-card);
+            padding: 4px;
             border-radius: 6px;
-            overflow: hidden;
+            border: 1px solid var(--border);
         }
-
         .lang-btn {
-            background: transparent;
-            color: var(--text-white);
+            background: none;
             border: none;
-            padding: 7px 14px;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
             cursor: pointer;
-            transition: 0.25s;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: 0.3s;
         }
-
         .lang-btn.active {
             background: var(--gold);
-            color: var(--bg-main);
+            color: var(--bg-dark);
         }
 
-        /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+        /* Главный экран (Hero) */
         .hero {
-            position: relative;
-            padding: 75px 0 85px;
-            background: 
-                radial-gradient(circle at 80% 35%, rgba(26, 54, 109, 0.38) 0%, transparent 55%),
-                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
-                linear-gradient(180deg, var(--bg-main) 0%, var(--bg-sec) 100%);
-            border-bottom: 1px solid var(--gold-border);
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+            background: radial-gradient(circle at top right, #0A1124 0%, #050A15 60%);
         }
-
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 48px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             align-items: center;
         }
-
-        .hero-eyebrow {
+        .hero-tag {
             font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
             color: var(--gold);
-            margin-bottom: 14px;
-            display: block;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
         }
-
         .hero-title {
-            font-size: 48px;
+            font-size: 46px;
             font-weight: 800;
-            line-height: 1.12;
-            text-transform: uppercase;
+            line-height: 1.2;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
-
-        .hero-title span {
-            color: var(--gold);
-            display: block;
-        }
-
-        .hero-platforms {
-            font-size: 18px;
+        .hero-subtitle {
+            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            color: var(--text-white);
+            margin-bottom: 20px;
+            color: var(--text-main);
         }
-
-        .hero-platforms .sep {
-            color: var(--gold);
-        }
-
         .hero-desc {
             color: var(--text-muted);
+            margin-bottom: 40px;
             font-size: 16px;
-            max-width: 540px;
-            margin-bottom: 34px;
         }
 
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .btn-gold-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 30px;
-            border: 1.5px solid var(--gold);
-            border-radius: 50px;
-            color: var(--text-white);
-            font-weight: 600;
-            font-size: 15px;
-            background: rgba(212, 175, 55, 0.08);
-        }
-
-        .btn-gold-outline:hover {
-            background: var(--gold);
-            color: var(--bg-main);
-            transform: translateY(-2px);
-        }
-
-        .quick-contacts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        .contact-pill {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-pill svg {
-            width: 26px;
-            height: 26px;
-            stroke: var(--gold);
-            flex-shrink: 0;
-        }
-
-        .contact-pill-text {
-            font-size: 12px;
-            line-height: 1.35;
-        }
-
-        .contact-pill-text strong {
-            display: block;
-            color: var(--text-white);
-            font-size: 13px;
-        }
-
-        .contact-pill-text span {
-            color: var(--text-muted);
-        }
-
-        /* Правая карточка с концептом визитки */
-        .visiting-card {
-            background: linear-gradient(145deg, rgba(16, 27, 51, 0.9), rgba(8, 14, 28, 0.95));
-            border: 1px solid var(--gold-border);
-            border-radius: 16px;
-            padding: 34px;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-        }
-
-        .visiting-card::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 30px;
-            right: 30px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-
-        .vc-header {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 18px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .vc-system-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-        }
-
-        .vc-motto {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-white);
-            margin-top: 4px;
-        }
-
-        .vc-neon {
-            font-family: 'Caveat', cursive;
-            color: var(--gold-light);
-            font-size: 22px;
-            line-height: 0.95;
-            text-align: right;
-            text-shadow: 0 0 12px rgba(212, 175, 55, 0.45);
-            transform: rotate(-4deg);
-        }
-
-        .vc-quote {
-            font-style: italic;
-            color: var(--gold-light);
-            font-size: 14px;
-            margin-bottom: 18px;
-            padding-left: 12px;
-            border-left: 2px solid var(--gold);
-        }
-
-        .vc-list {
-            list-style: none;
-            display: grid;
-            gap: 10px;
-            font-size: 14px;
-            color: #cbd5e1;
-        }
-
-        .vc-list li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .vc-list li::before {
-            content: '◆';
-            color: var(--gold);
-            font-size: 10px;
-        }
-
-        /* --- СЕКЦИЯ УСЛУГ (5 колонок с упором на ремонт) --- */
-        .services-bar {
-            background: var(--bg-main);
-            border-bottom: 1px solid var(--gold-border);
-            padding: 46px 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-        }
-
-        .service-item {
-            text-align: center;
-            padding: 14px 16px;
-            border-right: 1px solid rgba(255, 255, 255, 0.07);
-            transition: transform 0.25s ease;
-        }
-
-        .service-item:last-child {
-            border-right: none;
-        }
-
-        .service-item:hover {
-            transform: translateY(-4px);
-        }
-
-        .service-icon {
-            width: 42px;
-            height: 42px;
-            stroke: var(--gold);
-            margin: 0 auto 14px;
-            display: block;
-        }
-
-        .service-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-white);
-        }
-
-        .service-desc {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.45;
-        }
-
-        /* --- ИГРОВЫЕ ПЛАТФОРМЫ --- */
-        .platforms-sec {
-            padding: 56px 0;
-            background: var(--bg-sec);
-            border-bottom: 1px solid var(--gold-border);
-        }
-
-        .sec-head {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 34px;
-        }
-
-        .sec-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--gold);
-            white-space: nowrap;
-        }
-
-        .sec-line {
-            flex-grow: 1;
-            height: 1px;
-            background: var(--gold-border);
-        }
-
-        .sec-tag {
-            font-size: 13px;
-            color: var(--gold);
-            white-space: nowrap;
-        }
-
-        .platforms-grid {
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            gap: 10px;
-        }
-
-        .platform-box {
-            background: rgba(6, 11, 22, 0.65);
-            border: 1px solid rgba(212, 175, 55, 0.16);
-            border-radius: 10px;
-            padding: 18px 8px;
-            text-align: center;
-            transition: 0.25s;
-        }
-
-        .platform-box:hover {
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.08);
-            transform: translateY(-3px);
-        }
-
-        .platform-logo {
-            font-size: 15px;
-            font-weight: 800;
-            color: var(--text-white);
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-        }
-
-        .platform-logo span {
-            color: var(--gold);
-        }
-
-        .platform-name {
-            font-size: 11px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* --- О СЕРВИСЕ И КОНТАКТЫ --- */
-        .trust-sec {
-            padding: 68px 0;
-            background: var(--bg-main);
-            border-bottom: 1px solid var(--gold-border);
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 48px;
-            align-items: center;
-        }
-
-        .trust-box {
-            padding-left: 24px;
-            border-left: 3px solid var(--gold);
-        }
-
-        .trust-eyebrow {
-            font-size: 12px;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .trust-title {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            line-height: 1.25;
-            text-transform: uppercase;
-        }
-
-        .trust-text {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 24px;
-        }
-
-        .features-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .feature-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .feature-row svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--gold);
-            flex-shrink: 0;
-        }
-
-        /* Карточка прямых контактов */
-        .contact-card {
-            background: var(--bg-sec);
+        /* Карточка-Визитка (Концепт) */
+        .business-card {
+            background: linear-gradient(135deg, #0A1124 0%, #050A15 100%);
             border: 1px solid var(--gold);
-            border-radius: 14px;
-            padding: 32px;
+            border-radius: 15px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .bc-logo {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        .bc-slogan {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .bc-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .bc-list li {
+            font-size: 15px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .bc-list li::before {
+            content: '■';
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-size: 10px;
+            top: 5px;
+        }
+        .bc-quote {
+            font-weight: 600;
+            color: var(--gold-hover);
+            border-left: 3px solid var(--gold);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Контакты */
+        .contacts-block {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--bg-card);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .contact-item svg { width: 24px; height: 24px; stroke: var(--gold); flex-shrink: 0; }
+        .contact-text span { display: block; font-size: 12px; color: var(--text-muted); }
+        .contact-text strong { font-size: 18px; color: var(--text-main); }
+        .contact-text a { font-size: 16px; color: var(--gold); font-weight: 600; }
+
+        /* Платформы */
+        .platforms {
+            padding: 60px 0;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
             text-align: center;
         }
-
-        .contact-card-title {
-            font-size: 14px;
+        .platforms-title {
+            font-size: 24px;
             color: var(--gold);
+            margin-bottom: 40px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 10px;
         }
-
-        .contact-note {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+        .platforms-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
-
-        .phone-big {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--gold);
-            display: block;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        .email-link {
-            display: inline-block;
-            font-size: 15px;
-            color: var(--text-white);
+        .platform-tag {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
             padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--gold-border);
-            border-radius: 8px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: 0.3s;
         }
-
-        .email-link:hover {
+        .platform-tag:hover {
             border-color: var(--gold);
             color: var(--gold);
         }
 
-        /* --- ПОДВАЛ И ПОИСКОВЫЕ КЛЮЧИ (FOOTER) --- */
+        /* Подвал / SEO-блок */
         footer {
-            background: #04070f;
             padding: 40px 0;
-            font-size: 13px;
+            background-color: #03060C;
+            text-align: center;
         }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 0.7fr 1.6fr 0.7fr;
-            gap: 24px;
-            align-items: center;
+        .seo-keywords {
+            font-size: 11px;
+            color: #334155;
+            max-width: 900px;
+            margin: 0 auto 20px;
+            line-height: 1.8;
         }
-
-        .seo-keywords-box {
-            display: flex;
-             gap: 12px;
-            align-items: flex-start;
-            color: #64748b;
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        .seo-keywords-box svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--gold);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .footer-right {
-            text-align: right;
-        }
-
-        .footer-brand {
-            font-weight: 700;
-            color: var(--gold);
-            font-size: 15px;
-            letter-spacing: 1px;
-        }
-
-        .footer-motto {
-            font-size: 12px;
+        .copyright {
+            font-size: 14px;
             color: var(--text-muted);
-            margin-top: 4px;
         }
 
-        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ --- */
-        @media (max-width: 1024px) {
-            .hero-grid, .trust-grid {
-                grid-template-columns: 1fr;
-            }
-            .services-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .platforms-grid {
-                grid-template-columns: repeat(5, 1fr);
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .footer-right {
-                text-align: center;
-            }
-            .seo-keywords-box {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links, .logo-divider, .logo-tagline {
-                display: none;
-            }
-            .hero-title {
-                font-size: 34px;
-            }
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .service-item {
-                border-right: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            }
-            .platforms-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .features-list {
-                grid-template-columns: 1fr;
-            }
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ШАПКА САЙТА -->
+    <!-- Шапка -->
     <header>
-        <div class="container header-inner">
-            <a href="#" class="logo-group">
-                <div class="logo-brand">
-                    <!-- Иконка геймпада -->
-                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="6" y1="12" x2="10" y2="12"></line>
-                        <line x1="8" y1="10" x2="8" y2="14"></line>
-                        <line x1="15" y1="13" x2="15.01" y2="13"></line>
-                        <line x1="18" y1="11" x2="18.01" y2="11"></line>
-                        <rect x="2" y="6" width="20" height="12" rx="6"></rect>
-                    </svg>
-                    <div>
-                        <span class="logo-title">PPL</span>
-                        <span class="logo-sub">GAME STUDIO</span>
+        <div class="container header-content">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="6" y1="12" x2="10" y2="12"></line>
+                    <line x1="8" y1="10" x2="8" y2="14"></line>
+                    <line x1="15" y1="13" x2="15.01" y2="13"></line>
+                    <line x1="18" y1="11" x2="18.01" y2="11"></line>
+                    <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+                </svg>
+                <div class="logo-text">
+                    <h1>PPL</h1>
+                    <span>Game Studio</span>
+                </div>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#hero" class="lang-txt" data-ua="Головна" data-ru="Главная">Головна</a>
+                <a href="#services" class="lang-txt" data-ua="Платформи та Послуги" data-ru="Платформы и Услуги">Платформи та Послуги</a>
+                <a href="#contacts" class="lang-txt" data-ua="Контакти" data-ru="Контакты">Контакти</a>
+            </nav>
+
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="changeLang('ua')" id="btn-ua">UA</button>
+                <button class="lang-btn" onclick="changeLang('ru')" id="btn-ru">RU</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="hero" id="hero">
+        <div class="container hero-grid">
+            
+            <!-- Левая колонка: Основной посыл -->
+            <div>
+                <span class="hero-tag lang-txt" data-ua="Професійний ремонт та обслуговування" data-ru="Профессиональный ремонт и обслуживание">
+                    Професійний ремонт та обслуговування
+                </span>
+                <h2 class="hero-title">
+                    <span class="gold-text lang-txt" data-ua="Ремонт консолей" data-ru="Ремонт консолей">Ремонт консолей</span><br>
+                    <span class="lang-txt" data-ua="та джойстиків" data-ru="и джойстиков">та джойстиків</span>
+                </h2>
+                
+                <div class="hero-subtitle gold-text">
+                    PlayStation <span style="color:#fff">|</span> Xbox <span style="color:#fff">|</span> PC
+                </div>
+
+                <p class="hero-desc lang-txt" data-ua="Покупка, продаж, обмін, ремонт та обслуговування ігрових приставок і комп’ютерної техніки." data-ru="Покупка, продажа, обмен, ремонт и обслуживание игровых приставок и компьютерной техники.">
+                    Покупка, продаж, обмін, ремонт та обслуговування ігрових приставок і комп’ютерної техніки.
+                </p>
+
+                <!-- Контакты -->
+                <div class="contacts-block" id="contacts">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <div class="contact-text">
+                            <span class="lang-txt" data-ua="Тільки текстові повідомлення (WhatsApp / Viber)" data-ru="Только текстовые сообщения (WhatsApp / Viber)">Тільки текстові повідомлення (WhatsApp / Viber)</span>
+                            <strong>+380 97 807 11 57</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <div class="contact-text">
+                            <span class="lang-txt" data-ua="Електронна пошта" data-ru="Электронная почта">Електронна пошта</span>
+                            <a href="mailto:pplgamestudio@gmail.com">pplgamestudio@gmail.com</a>
+                        </div>
                     </div>
                 </div>
-                <div class="logo-divider"></div>
-                <div class="logo-tagline">
-                    CONSOLE REPAIR<br>SERVICE & ACCESSORIES
-                </div>
-            </a>
+            </div>
 
-            <nav class="n
+            <!-- Правая колонка: Концепт визитки -->
+            <div class="business-card">
+                <div class="bc-logo">PPL Computer Entertainment Systems</div>
+                <div class="bc-slogan lang-txt" data-ua="Від гравця до гравців." data-ru="От игрока к игрокам.">Від гравця до гравців.</div>
+                
+                <div class="bc-quote lang-txt" data-ua="«Люблю ігри з дитинства — тому займаюся цим з любовью.»" data-ru="«Люблю игры с детства — поэтому занимаюсь этим с любовью.»">
+                    «Люблю ігри з дитинства — тому займаюся цим з любовью.»
+                </div>
+
+                <ul class="bc-list">
+                    <li>Sony PlayStation / Xbox / PC</li>
+                    <li class="lang-txt" data-ua="Ігрові приставки, ігри та аксесуари." data-ru="Игровые приставки, игры и аксессуары.">Ігрові приставки, ігри та аксесуари.</li>
+                    <li class="lang-txt" data-ua="Комп’ютерні системи, ПК та ноутбуки." data-ru="Компьютерные системы, ПК и ноутбуки.">Комп’ютерні системи, ПК та ноутбуки.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Платформы -->
+    <section class="platforms" id="services">
+        <div class="container">
+            <h3 class="platforms-title lang-txt" data-ua="Ігрові платформи" data-ru="Игровые платформы">Ігрові платформи</h3>
+            <div class="platforms-grid">
+                <div class="platform-tag">PlayStation 1</div>
+                <div class="platform-tag">PlayStation 2</div>
+                <div class="platform-tag">PlayStation 3</div>
+                <div class="platform-tag">PlayStation 4</div>
+                <div class="platform-tag" style="border-color: var(--gold); color: var(--gold);">PlayStation 5</div>
+                <div class="platform-tag">Xbox</div>
+                <div class="platform-tag">Xbox 360</div>
+                <div class="platform-tag">Xbox One</div>
+                <div class="platform-tag" style="border-color: var(--gold); color: var(--gold);">Xbox Series S / X</div>
+                <div class="platform-tag">PC</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал и SEO ключи -->
+    <footer>
+        <div class="container">
+            <!-- Скрытые, но читаемые поисковиками ключевые слова -->
+            <div class="seo-keywords lang-txt" data-ua="ремонт playstation, ремонт xbox, ремонт джойстиків, заміна стіків, усунення дрифту, чистка консолей, обслуговування консолей, запчастини для playstation, запчастини для xbox, ігрові приставки, геймпади, ремонт ps5, ремонт ps4, ремонт ps3, ремонт ps2, ремонт xbox series s, ремонт xbox series x, xbox one, xbox 360, ремонт пк, ремонт ноутбуків" data-ru="ремонт playstation, ремонт xbox, ремонт джойстиков, замена стиков, устранение дрифта, чистка консолей, обслуживание консолей, запчасти для playstation, запчасти для xbox, игровые приставки, геймпады, ремонт ps5, ремонт ps4, ремонт ps3, ремонт ps2, ремонт xbox series s, ремонт xbox series x, xbox one, xbox 360, ремонт пк, ремонт ноутбуков">
+                ремонт playstation, ремонт xbox, ремонт джойстиків, заміна стіків, усунення дрифту, чистка консолей, обслуговування консолей, запчастини для playstation, запчастини для xbox, ігрові приставки, геймпади, ремонт ps5, ремонт ps4, ремонт ps3, ремонт ps2, ремонт xbox series s, ремонт xbox series x, xbox one, xbox 360, ремонт пк, ремонт ноутбуків
+            </div>
+            
+            <div class="copyright">
+                <strong style="color: #fff;">PPL GAME STUDIO</strong> 
+                <span class="lang-txt" data-ua="© 2026. Всі права захищені." data-ru="© 2026. Все права защищены.">© 2026. Всі права захищені.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипт переключения языков -->
+    <script>
+        function changeLang(lang) {
+            // Переключение кнопок
+            document.getElementById('btn-ua').classList.remove('active');
+            document.getElementById('btn-ru').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Замена текста во всех элементах с классом lang-txt
+            const elements = document.querySelectorAll('.lang-txt');
+            elements.forEach(el => {
+                el.innerText = el.getAttribute('data-' + lang);
+            });
+            
+            // Установка языка документа
+            document.documentElement.lang = (lang === 'ua') ? 'uk' : 'ru';
+        }
+    </script>
+</body>
+</html>
