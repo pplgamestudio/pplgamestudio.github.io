@@ -1,85 +1,675 @@
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PPL Game Studio — ремонт игровых консолей PlayStation и Xbox, обслуживание геймпадов и электроники.">
-  <title>PPL Game Studio | Console Repair</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #101114;
-      color: #f4f4f4;
-    }
-    header {
-      padding: 24px 8%;
-      border-bottom: 1px solid #333;
-      color: #d8b56d;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 90px 24px;
-      text-align: center;
-    }
-    h1 { font-size: clamp(36px, 6vw, 64px); }
-    h1 span { color: #d8b56d; }
-    p {
-      color: #c0c0c0;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 45px;
-      text-align: left;
-    }
-    .service {
-      background: #1b1c21;
-      border: 1px solid #34353b;
-      border-radius: 12px;
-      padding: 24px;
-    }
-    .service h2 { color: #d8b56d; font-size: 21px; }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #888;
-      border-top: 1px solid #333;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06142f">
+<meta name="description" content="PPL Game Studio — PlayStation, Xbox, PC. Продаж, обмін, ремонт і обслуговування ігрових приставок та комп'ютерної техніки.">
+<title>PPL Game Studio | Computer Entertainment Systems</title>
+
+<style>
+:root {
+  --bg: #041027;
+  --blue: #0758cb;
+  --gold: #f4ce70;
+  --gold-dark: #bd8b2c;
+  --white: #f5f7ff;
+  --muted: #c3cde0;
+  --panel: #091b3b;
+}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at top, #103b83 0%, transparent 48%),
+    linear-gradient(145deg, #020817, #071a3b 55%, #020817);
+}
+
+a { color: inherit; }
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+/* HEADER / BRAND */
+
+header {
+  background: rgba(2, 9, 25, .96);
+  border-bottom: 1px solid var(--gold-dark);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  color: var(--gold);
+  font-size: 39px;
+}
+
+.logo-name {
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 34px;
+  letter-spacing: 3px;
+}
+
+.logo-sub {
+  color: #e7c56f;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #e4eaf8;
+}
+
+nav a:hover { color: var(--gold); }
+
+.languages {
+  display: flex;
+  border: 1px solid var(--gold-dark);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.languages button {
+  cursor: pointer;
+  padding: 10px 13px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+.languages button.active {
+  color: #07142d;
+  background: var(--gold);
+}
+
+/* HERO / BUSINESS CARD */
+
+.hero {
+  padding: 65px 0 50px;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gold-dark);
+  border-radius: 20px;
+  padding: 55px 28px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #0b3d89 0%, #061735 58%, #030b1d 100%);
+  box-shadow: 0 15px 60px #0008;
+}
+
+.hero-card::before,
+.hero-card::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 75%;
+  left: 12.5%;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.hero-card::before { top: 15px; }
+.hero-card::after { bottom: 15px; }
+
+.hero-logo {
+  color: var(--gold);
+  font-size: clamp(52px, 10vw, 94px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-shadow: 0 0 30px #e4b94b40;
+}
+
+.hero-subtitle {
+  color: var(--gold);
+  font-size: clamp(12px, 2vw, 17px);
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-top: 13px;
+}
+
+.tagline {
+  font-size: clamp(23px, 4vw, 34px);
+  font-weight: bold;
+  color: var(--gold);
+  margin: 32px 0 10px;
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.platform-line {
+  margin-top: 25px;
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: .5px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--gold);
+  font-weight: bold;
+}
+
+.button-gold {
+  background: linear-gradient(135deg, #ffe9a8, #d7a73e);
+  color: #06132d;
+}
+
+.button-outline {
+  color: var(--gold);
+  background: #04132b;
+}
+
+/* SECTIONS */
+
+section.content-section { padding: 25px 0; }
+
+.section-title {
+  text-align: center;
+  color: var(--gold);
+  font-size: clamp(25px, 4vw, 34px);
+  margin: 0 0 12px;
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 auto 28px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.card {
+  background: linear-gradient(145deg, #0c2856, #061329);
+  border: 1px solid #9b792f;
+  border-radius: 13px;
+  padding: 25px;
+  text-align: center;
+}
+
+.card-icon {
+  font-size: 35px;
+  color: var(--gold);
+}
+
+.card h3 {
+  color: var(--gold);
+  font-size: 19px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.platform-box {
+  border: 1px solid var(--gold-dark);
+  border-radius: 15px;
+  padding: 25px;
+  background: #030d22cc;
+}
+
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.platform {
+  padding: 17px 7px;
+  border: 1px solid #29446d;
+  background: #0b2146;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.platform strong {
+  display: block;
+  color: var(--gold);
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.repair-box {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  border: 1px solid var(--gold-dark);
+  background: linear-gradient(100deg, #0a2a5c, #040e23);
+  padding: 27px;
+  border-radius: 14px;
+}
+
+.repair-icon {
+  font-size: 45px;
+  color: var(--gold);
+}
+
+.repair-box h2 {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.repair-box p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* CONTACTS */
+
+.contact-box {
+  border: 1px solid var(--gold-dark);
+  border-radius: 15px;
+  background: #030d22;
+  padding: 30px;
+  text-align: center;
+}
+
+.contact-box h2 {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.contact-box p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact-link {
+  display: inline-block;
+  color: var(--gold);
+  font-size: clamp(19px, 4vw, 26px);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-note {
+  color: #9dabc4 !important;
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 45px;
+  padding: 30px 15px;
+  text-align: center;
+  background: #020817;
+  border-top: 1px solid var(--gold-dark);
+  color: #aab7ce;
+  font-size: 13px;
+}
+
+.footer-brand {
+  color: var(--gold);
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .header-inner {
+    padding: 14px 0;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    width: 100%;
+    order: 3;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero { padding-top: 30px; }
+  .hero-card { padding: 45px 18px; }
+  .cards { grid-template-columns: 1fr; }
+  .platforms { grid-template-columns: repeat(2, 1fr); }
+  .repair-box { align-items: flex-start; }
+}
+
+@media (max-width: 450px) {
+  .logo-name { font-size: 27px; }
+  .logo-sub { font-size: 8px; letter-spacing: .8px; }
+  .logo-icon { font-size: 29px; }
+  nav a { font-size: 12px; }
+  .platform-line { font-size: 15px; }
+  .repair-box { display: block; }
+  .repair-icon { margin-bottom: 15px; }
+}
+</style>
 </head>
+
 <body>
-  <header>PPL GAME STUDIO</header>
-  <main>
-    <h1>GAME CONSOLE<br><span>REPAIR STUDIO</span></h1>
-    <p>
-      Professional console repair, maintenance
-      and controller restoration.
-      Gaming since 1997.
-    </p>
-    <section class="services">
-      <article class="service">
-        <h2>PlayStation</h2>
-        <p>Console diagnostics, board repair and maintenance.</p>
-      </article>
-      <article class="service">
-        <h2>Xbox</h2>
-        <p>Hardware diagnostics and console servicing.</p>
-      </article>
-      <article class="service">
-        <h2>Controller Repair</h2>
-        <p>Stick replacement, drift repair and controller maintenance.</p>
-      </article>
-    </section>
-  </main>
-  <footer>PPL Game Studio © 2026</footer>
+
+<header>
+  <div class="container header-inner">
+    <a class="logo" href="#home">
+      <span class="logo-icon">⌁</span>
+      <span>
+        <span class="logo-name">PPL</span>
+        <span class="logo-sub" data-i18n="brand">COMPUTER ENTERTAINMENT SYSTEMS</span>
+      </span>
+    </a>
+
+    <nav>
+      <a href="#home" data-i18n="navHome">Головна</a>
+      <a href="#services" data-i18n="navServices">Послуги</a>
+      <a href="#platforms" data-i18n="navPlatforms">Платформи</a>
+      <a href="#contacts" data-i18n="navContacts">Контакти</a>
+    </nav>
+
+    <div class="languages">
+      <button class="active" data-lang="uk" aria-pressed="true">УКР</button>
+      <button data-lang="ru" aria-pressed="false">РУС</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-logo">PPL</div>
+        <div class="hero-subtitle" data-i18n="brand">
+          COMPUTER ENTERTAINMENT SYSTEMS
+        </div>
+
+        <div class="tagline" data-i18n="tagline">
+          Від гравця до гравців.
+        </div>
+
+        <p class="hero-description" data-i18n="intro">
+          Люблю ігри з дитинства — тому займаюся цим з любов’ю.
+        </p>
+
+        <div class="platform-line">
+          Sony PlayStation / Xbox / PC
+        </div>
+
+        <p class="hero-description" style="margin-top:15px"
+           data-i18n="summary">
+          Ігрові приставки, ігри та аксесуари.<br>
+          Комп’ютерні системи, ПК та ноутбуки.
+        </p>
+
+        <div class="buttons">
+          <a class="button button-gold" href="#contacts"
+             data-i18n="contactButton">Зв’язатися</a>
+          <a class="button button-outline"
+             href="mailto:pplgamestudio@gmail.com"
+             data-i18n="emailButton">Написати на email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="services">
+    <div class="container">
+      <h2 class="section-title" data-i18n="servicesTitle">
+        Покупка, продаж, обмін, ремонт
+      </h2>
+      <p class="section-intro" data-i18n="servicesIntro">
+        Ігрова техніка та комп’ютерні системи — від вибору до обслуговування.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">▣</div>
+          <h3 data-i18n="card1Title">Ігрові приставки та аксесуари</h3>
+          <p data-i18n="card1Text">
+            Ігрові консолі, ігри, геймпади та аксесуари.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">▤</div>
+          <h3 data-i18n="card2Title">Комп’ютерна техніка</h3>
+          <p data-i18n="card2Text">
+            Комп’ютерні системи, персональні ПК та ноутбуки.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⚙</div>
+          <h3 data-i18n="card3Title">Ремонт та обслуговування</h3>
+          <p data-i18n="card3Text">
+            Професійний ремонт і технічне обслуговування ігрових приставок та комп’ютерної техніки.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="platforms">
+    <div class="container platform-box">
+      <h2 class="section-title" data-i18n="platformTitle">
+        Ігрові платформи
+      </h2>
+
+      <div class="platforms">
+        <div class="platform"><strong>PS1</strong>PlayStation</div>
+        <div class="platform"><strong>PS2</strong>PlayStation 2</div>
+        <div class="platform"><strong>PS3</strong>PlayStation 3</div>
+        <div class="platform"><strong>PS4</strong>PlayStation 4</div>
+        <div class="platform"><strong>PS5</strong>PlayStation 5</div>
+        <div class="platform"><strong>XBOX</strong>Xbox</div>
+        <div class="platform"><strong>360</strong>Xbox 360</div>
+        <div class="platform"><strong>ONE</strong>Xbox One</div>
+        <div class="platform"><strong>S / X</strong>Xbox Series S / X</div>
+        <div class="platform"><strong>PC</strong>ПК та ноутбуки</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="repair-box">
+        <div class="repair-icon">⚙</div>
+        <div>
+          <h2 data-i18n="repairTitle">
+            Професійний ремонт та обслуговування
+          </h2>
+          <p data-i18n="repairText">
+            Ігрових приставок і комп’ютерної техніки.
+            Від гравця до гравців — з увагою до кожної деталі.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="contacts">
+    <div class="container">
+      <div class="contact-box">
+        <h2 data-i18n="contactTitle">Контакти PPL Game Studio</h2>
+        <p data-i18n="contactIntro">
+          WhatsApp / Viber — тільки текстові повідомлення.
+        </p>
+
+        <a class="contact-link" href="tel:+380978071157">
+          +380 97 807 11 57
+        </a>
+        <br>
+
+        <a class="contact-link"
+           href="https://wa.me/380978071157"
+           target="_blank" rel="noopener noreferrer">
+          WhatsApp
+        </a>
+        <br>
+
+        <a class="contact-link"
+           href="viber://chat?number=%2B380978071157">
+          Viber
+        </a>
+        <br>
+
+        <a class="contact-link"
+           href="mailto:pplgamestudio@gmail.com">
+          pplgamestudio@gmail.com
+        </a>
+
+        <p class="contact-note" data-i18n="contactNote">
+          Для зв’язку використовуйте текстові повідомлення.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-brand">PPL COMPUTER ENTERTAINMENT SYSTEMS</div>
+  <div data-i18n="footerLine">Від гравця до гравців.</div>
+  <p>© <span id="year"></span> PPL Game Studio</p>
+</footer>
+
+<script>
+const translations = {
+  uk: {
+    brand: "COMPUTER ENTERTAINMENT SYSTEMS",
+    navHome: "Головна",
+    navServices: "Послуги",
+    navPlatforms: "Платформи",
+    navContacts: "Контакти",
+    tagline: "Від гравця до гравців.",
+    intro: "Люблю ігри з дитинства — тому займаюся цим з любов’ю.",
+    summary: "Ігрові приставки, ігри та аксесуари.<br>Комп’ютерні системи, ПК та ноутбуки.",
+    contactButton: "Зв’язатися",
+    emailButton: "Написати на email",
+    servicesTitle: "Покупка, продаж, обмін, ремонт",
+    servicesIntro: "Ігрова техніка та комп’ютерні системи — від вибору до обслуговування.",
+    card1Title: "Ігрові приставки та аксесуари",
+    card1Text: "Ігрові консолі, ігри, геймпади та аксесуари.",
+    card2Title: "Комп’ютерна техніка",
+    card2Text: "Комп’ютерні системи, персональні ПК та ноутбуки.",
+    card3Title: "Ремонт та обслуговування",
+    card3Text: "Професійний ремонт і технічне обслуговування ігрових приставок та комп’ютерної техніки.",
+    platformTitle: "Ігрові платформи",
+    repairTitle: "Професійний ремонт та обслуговування",
+    repairText: "Ігрових приставок і комп’ютерної техніки. Від гравця до гравців — з увагою до кожної деталі.",
+    contactTitle: "Контакти PPL Game Studio",
+    contactIntro: "WhatsApp / Viber — тільки текстові повідомлення.",
+    contactNote: "Для зв’язку використовуйте текстові повідомлення.",
+    footerLine: "Від гравця до гравців."
+  },
+  ru: {
+    brand: "COMPUTER ENTERTAINMENT SYSTEMS",
+    navHome: "Главная",
+    navServices: "Услуги",
+    navPlatforms: "Платформы",
+    navContacts: "Контакты",
+    tagline: "От игрока — для игроков.",
+    intro: "Люблю игры с детства — поэтому занимаюсь этим с любовью.",
+    summary: "Игровые приставки, игры и аксессуары.<br>Компьютерные системы, ПК и ноутбуки.",
+    contactButton: "Связаться",
+    emailButton: "Написать на email",
+    servicesTitle: "Покупка, продажа, обмен, ремонт",
+    servicesIntro: "Игровая техника и компьютерные системы — от выбора до обслуживания.",
+    card1Title: "Игровые приставки и аксессуары",
+    card1Text: "Игровые консоли, игры, геймпады и аксессуары.",
+    card2Title: "Компьютерная техника",
+    card2Text: "Компьютерные системы, персональные ПК и ноутбуки.",
+    card3Title: "Ремонт и обслуживание",
+    card3Text: "Профессиональный ремонт и техническое обслуживание игровых приставок и компьютерной техники.",
+    platformTitle: "Игровые платформы",
+    repairTitle: "Профессиональный ремонт и обслуживание",
+    repairText: "Игровых приставок и компьютерной техники. От игрока — для игроков, с вниманием к каждой детали.",
+    contactTitle: "Контакты PPL Game Studio",
+    contactIntro: "WhatsApp / Viber — только текстовые сообщения.",
+    contactNote: "Для связи используйте текстовые сообщения.",
+    footerLine: "От игрока — для игроков."
+  }
+};
+
+function setLanguage(lang) {
+  const words = translations[lang] || translations.uk;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    if (words[key] !== undefined) element.innerHTML = words[key];
+  });
+
+  document.querySelectorAll("[data-lang]").forEach(button => {
+    const active = button.dataset.lang === lang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+}
+
+document.querySelectorAll("[data-lang]").forEach(button => {
+  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+setLanguage("uk");
+</script>
+
 </body>
 </html>
